@@ -21,8 +21,8 @@
 		</head>
 		<body>
 		<div class="LogNReg">
-			<a href="#" class="btn btn-default">Sign In</a>
-			<a href="#" class="btn btn-default">Sign Up</a>
+			<a href="<?php echo base_url(); ?>pages/signup_signin" class="btn btn-default">Sign In</a>
+			<a href="<?php echo base_url(); ?>pages/signup_signin" class="btn btn-default">Sign Up</a>
 
 		</div>
 		<nav class="navbar navbar-default">

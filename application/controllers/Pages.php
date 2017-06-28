@@ -22,7 +22,22 @@
 					//if successfully made contest
 				}
 				else;
-					//else;
+					//else;_
+			}
+
+			public function signup_signin()
+			{
+				$this->layouter->render("pages/signup_signin");
+			}
+
+			public function shirtdesigner()
+			{
+				$this->layouter->render("pages/shirtdesigner");
+			}
+
+			public function marketplace()
+			{
+				$this->layouter->render("pages/marketplace");
 			}
 
 			public function uploadfile()
