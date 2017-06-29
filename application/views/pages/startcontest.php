@@ -92,7 +92,7 @@
             });
 
         request.done(function(msg){
-            window.location = "someotherpage"
+            window.location = "contestview"
         })
     });
 
