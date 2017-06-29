@@ -5,6 +5,7 @@
             	$this->load->database();
 				$this->load->library('layouter');
 				$this->load->model('pages_model');
+				$this->load->model('users_model');
 				$this->load->helpers('form');
             }
 
@@ -22,11 +23,12 @@
 					//if successfully made contest
 				}
 				else;
-					//else;_
+					//else
 			}
 
 			public function signup_signin()
 			{
+		
 				$this->layouter->render("pages/signup_signin");
 			}
 
@@ -44,7 +46,6 @@
 			{
 
 			}
-
 
 			public function startcontest()
 			{

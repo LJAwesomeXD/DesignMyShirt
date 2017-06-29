@@ -94,7 +94,21 @@
         request.done(function(msg){
             window.location = "someotherpage"
         })
+
+
+        
     });
 
+
+    /**Generate Input**/
+    window.generateInputs = () =>
+    {
+            $("#inputContestTitle").val(chance.surname() + "'s Contest"),
+            $("#inputContestDescription").val(chance.color()),
+            $("#inputContestPrize").val(chance.number()),
+            $("#inputContestSummary").val(chance.color()),
+            $("#inputGender").val(chance.gender()),
+            $("#inputContestLength").val(chance.number())
+    }
 
 </script>

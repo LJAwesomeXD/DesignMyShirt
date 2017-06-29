@@ -8,6 +8,7 @@
 		<link rel="stylesheet"  href="<?php echo base_url(); ?>assets/bootstrap.min.css">
 		<script src="<?php echo base_url(); ?>assets/jquery.min.js"></script>
 		<script src="http://hayageek.github.io/jQuery-Upload-File/4.0.10/jquery.uploadfile.min.js"></script>
+		<script src="<?php echo base_url() ?>js/libs/chance.js"></script>
 		<style type="text/css">
 
 			.LogNReg {
