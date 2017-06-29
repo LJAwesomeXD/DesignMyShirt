@@ -29,6 +29,10 @@
 			{
 				$this->layouter->render("pages/signup_signin");
 			}
+			public function contestview()
+			{
+				$this->layouter->render("pages/contestview");
+			}
 
 			public function shirtdesigner()
 			{
