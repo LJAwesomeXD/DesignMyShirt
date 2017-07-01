@@ -14,6 +14,12 @@ session_start();
 
         }
 
+       /* public function profile()
+        {
+
+            $this->layouter->render("user/profile");
+        } */
+            
         public function signup()
         {
             $data = $_POST;

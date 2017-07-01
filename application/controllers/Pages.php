@@ -16,14 +16,19 @@ session_start();
 				$this->layouter->render("pages/home");
 			}
 
+			public function profile()
+			{
+				$this->layouter->render("pages/profile");
+			}
+
 			public function auth()
 			{
 				$this->layouter->render("pages/auth");
 			}
 
-			public function shirtdesigner()
+			public function designers()
 			{
-				$this->layouter->render("pages/shirtdesigner");
+				$this->layouter->render("pages/designers");
 			}
 
 			public function marketplace()
