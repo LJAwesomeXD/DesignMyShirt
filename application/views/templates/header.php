@@ -18,13 +18,24 @@
 
 			}
 
+			body
+			{
+
+			}
+
 		</style>
 		</head>
 		<body>
 		<div class="LogNReg">
-			
-			<a href="<?php echo base_url(); ?>pages/signup_signin" class="btn btn-default">Sign Up / Sign In"</a>
 
+			<?php
+				/** shows/unshows logout/login button**/
+				//if logged in
+				if(isset($_SESSION["username"])): ?>
+				<a href="<?php echo base_url(); ?>users/logout" class="btn btn-default">Logout</a>
+			<?php else:  ?>
+				<a href="<?php echo base_url(); ?>pages/auth" class="btn btn-default">Sign Up / Sign In</a>
+			<?php endif ?>
 		</div>
 		<nav class="navbar navbar-default">
 			<div class="container">
@@ -33,19 +44,20 @@
 				</div>
 				<div id ="navbar">
 					<ul class ="nav navbar-nav">
-
-
-						<li><a href="<?php echo base_url(); ?>pages/startcontest">Start Shirt Design Contest</a></li>
-						<li><a href="<?php echo base_url(); ?>pages/shirtdesigner">Shirt Designers</a></li>
-						<li><a href="<?php echo base_url(); ?>pages/contest">Contest</a></li>
+						<?php
+							if(isset($_SESSION["username"])) :
+						?>
+							<li><a href="<?php echo base_url(); ?>contests/create">Start Shirt Design Contest</a></li>
+						<?php
+							endif
+						?>
+						<li><a href="<?php echo base_url(); ?>pages/designers">Shirt Designers</a></li>
+						<li><a href="<?php echo base_url(); ?>contests/all">Contest</a></li>
 						<li><a href="<?php echo base_url(); ?>pages/marketplace">MarketPlace</a></li>
-
-
-						</ul>
-					</div>
+					</ul>
 				</div>
-			</nav>
+		</nav>
 
 
 
-			<div class="container">
+		<div class="container">

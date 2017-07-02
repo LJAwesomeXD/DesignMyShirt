@@ -36,6 +36,8 @@
  * @filesource
  */
 
+//session_start();
+
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT

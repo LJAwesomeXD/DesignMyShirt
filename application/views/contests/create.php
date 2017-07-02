@@ -1,4 +1,4 @@
-<?php echo form_open_multipart('uploadfile', array('class' =>'form-horizontal')) ?>
+<?php echo form_open_multipart('uploadfile', array('class' => 'form-horizontal')) ?>
   <fieldset>
     <legend>Create Contest</legend>
     <div class="form-group">
@@ -36,8 +36,8 @@
       <label class="col-lg-2 control-label">Gender : </label>
       <div class="col-lg-10">
         <select id="inputGender">
-          <option value="male">Male</option>
-          <option value="female">Female</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
         </select>
       </div>
     </div>
@@ -87,12 +87,12 @@
         var request;
             request = $.ajax({
                 data : data,
-                url : " createcontest",
+                url : "create_new",
                 method : "GET"
             });
 
         request.done(function(msg){
-            window.location = "contestview"
+            window.location = "all"
         })
 
 
@@ -103,12 +103,12 @@
     /**Generate Input**/
     window.generateInputs = () =>
     {
-            $("#inputContestTitle").val(chance.surname() + "'s Contest"),
+            $("#inputContestTitle").val(chance.last() + "'s Contest"),
             $("#inputContestDescription").val(chance.color()),
-            $("#inputContestPrize").val(chance.number()),
+            $("#inputContestPrize").val(chance.integer()),
             $("#inputContestSummary").val(chance.color()),
             $("#inputGender").val(chance.gender()),
-            $("#inputContestLength").val(chance.number())
+            $("#inputContestLength").val(chance.integer())
     }
 
 </script>
