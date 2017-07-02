@@ -79,7 +79,11 @@ span.tags
     left: 50%;
     margin-left: -10px;
     z-index: 10;
+
     }
+
+    .
+
 </style>
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
@@ -87,6 +91,9 @@ span.tags
         <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
          <div class="well profile">
             <div class="col-sm-12">
+             <div>
+                    <img src="<?php echo base_url('images/profpic.png'); ?>" id="profpic"  width="200pt" height="auto" align="middle" alt="Logo"/>
+                    </div> 
                 <div class="col-xs-12 col-sm-8">
                     <h2>LJ Sta Ana</h2>
                     <p><strong>About: </strong> Shirt Designer </p>
@@ -96,6 +103,7 @@ span.tags
                         <span class="tags">3D</span>
                         <span class="tags">realistic</span>
                     </p>
+
                 </div>             
                 <div class="col-xs-12 col-sm-4 text-center">
                     <figure>
@@ -141,5 +149,125 @@ span.tags
     </div>
 </div>
 <div class="Gallery">
-    <h1> This is Section is Gallery </h1>
+    <h1> Submitted Designs </h1>
+
+    <div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+       <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4><a href="#">first submission</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">12 reviews</p>
+                                <p>
+                                    <span class=""></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star-o"></span>
+                                </p>
+                            </div>
+                        </div>
+                         <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4><a href="#">Second submission</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">12 reviews</p>
+                                <p>
+                                    <span class=""></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star-o"></span>
+                                </p>
+                            </div>
+                        </div>
+    </div>
+    <div class="col-sm-4">
+     <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4><a href="#">Third submission</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">12 reviews</p>
+                                <p>
+                                    <span class=""></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star-o"></span>
+                                </p>
+                            </div>
+                        </div>
+                         <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4><a href="#">Fourth submission</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">12 reviews</p>
+                                <p>
+                                    <span class=""></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star-o"></span>
+                                </p>
+                            </div>
+                        </div>
+      
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4><a href="#">Fifth submission</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">12 reviews</p>
+                                <p>
+                                    <span class=""></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star-o"></span>
+                                </p>
+                            </div>
+                        </div>
+                         <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4><a href="#">Sixth submission</a>
+                                </h4>
+                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">12 reviews</p>
+                                <p>
+                                    <span class=""></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star-o"></span>
+                                </p>
+                            </div>
+                        </div>
+    </div>
+  </div>
+</div>
 </div>
