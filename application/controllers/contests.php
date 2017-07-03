@@ -1,9 +1,11 @@
 <?php
-session_start();
+
     class Contests extends CI_Controller
     {
+        //initialize controller
         public function __construct()
         {
+            session_start();
             parent::__construct();
             $this->load->model('contests_model');
             $this->load->library('layouter');
@@ -11,6 +13,7 @@ session_start();
         }
 
 
+        // adds a new contest to the database through the Contests model
         public function create_new()
         {
             //stop user from accessing this page when not logged it
@@ -25,7 +28,7 @@ session_start();
                 }
                 else
                 {
-
+                    echo "FAIL";
                 }
             }
 
@@ -53,7 +56,6 @@ session_start();
         public function all()
         {
             $data['contests'] = $this->contests_model->get_contests();
-            //print_r($data['contests']->result_array);
             $this->layouter->render('contests/all', $data);
         }
     }

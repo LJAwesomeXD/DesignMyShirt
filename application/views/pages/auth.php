@@ -115,10 +115,51 @@
 			</div>
 		</div>
 		<script>
-		// get data
+		// create new users
+		function loginUser(data, cb){
+			var request;
+			  request = $.ajax({
+				  data : data,
+				  url : "../users/signin",
+				  method : "POST"
+			  });
+			  request.done(function(msg){
+				  cb(msg);
+				  if(msg=="fail"){
+					  $("#error_login")
+						  .css({
+							  "color" : "red",
+							  "border" : "1px solid red",
+							  "border-radius" : "5px",
+							  "padding" : "5px",
+							  "margin" : "15px"
+						  })
+					  .html("Invalid credentials!");
 
-		/** SIGN UP **/
-		  $("#submit_signup").click(function(){
+
+					  $("#inputLoginUsername, #inputLoginPassword").val('');
+				  }
+				  else
+					  //window.location='../user/profile'
+					  ;
+			  });
+		}
+
+		function createUser(data, cb){
+			var request;
+		    request = $.ajax({
+			   data : data,
+			   url : "../users/signup",
+			   method : "POST"
+		   });
+		   request.done(function(msg){
+			   cb(msg);
+// 			   alert("Thanks for joining! You may now log in.");
+		   });
+		}
+
+		/** SIGN UP EVENT **/
+		$("#submit_signup").click(function(){
 		      var data = {
 		          first_name : $("#inputfirstname").val(),
 		          last_name : $("#inputlastname").val(),
@@ -130,55 +171,25 @@
 				  username :  $("#inputUsername").val()
 		      };
 
+			  createUser(data, function(){
 
+			  });
+		 });
 
-		      var request;
-		          request = $.ajax({
-		              data : data,
-		              url : "../users/signup",
-		              method : "POST"
-		          });
-		          request.done(function(msg){
-		              alert("Thanks for joining! You may now log in.");
-		          });
-
-				  window.location='';
-		  });
-
-		 /** SIGN IN **/
+		 /** SIGN IN  EVENT**/
 		  $('#submit_login').click(function(){
 			  var data = {
 				  username : $("#inputLoginUsername").val(),
 				  password : $("#inputLoginPassword").val()
 			  };
 
-			  console.log(data);
-			  var request;
-					request = $.ajax({
-						data : data,
-						url : "../users/signin",
-						method : "POST"
-					});
-					request.done(function(msg){
-						if(msg=="fail"){
-							$("#error_login")
-								.css({
-									"color" : "red",
-									"border" : "2px solid red",
-									"border-radius" : "5px",
-									"padding" : "5px",
-									"margin" : "15px"
-								})
-							.html(msg);
+			  loginUser(data, function(){
 
-
-							$("#inputLoginUsername, #inputLoginPassword").val('');
-						}
-						else
-							window.location='../user/profile'
-					});
-
+			  });
 		  });
+
+		  /** DEVELOPMENT ONLY (UNIT TESTS) **/
+		  /**-----------------------------------------------------------**/
 
 		  /**Generate Input**/
 		  window.generateInputs = () =>
@@ -196,6 +207,44 @@
 		      $("#inputPassword").val(pass);
 		      $("#confirmInputPassword").val(pass);
 		  }
+
+
+		  /** UNIT TESTING :: generate n new users **/
+		  function generateUsers(n){
+
+			  //track progress
+			  var usersGenerated = 0;
+
+			  //create n users
+			  for(var i = 0; i < n; i++){
+
+				  //user data
+				 var gender = chance.gender();
+				 var data = {
+					 first_name : chance.first({gender}),
+					 last_name : chance.last({gender}),
+					 contact_number : Math.abs(chance.integer()),
+					 address : chance.address().
+					 gender,
+					 email : chance.email(),
+					 password : chance.first + "1234",
+					 username :  chance.first() + Math.floor(Math.random() * 100)
+				 };
+
+				  //helper to create user
+				  createUser(data, function(msg){
+					  if(msg="SUCCESS")
+						usersGenerated++;
+				  });
+			  }
+
+			  //let us track how many users have been created
+			  window.setInterval(function(){
+				  console.clear();
+				  console.log("Users generated: " + usersGenerated);
+			  }, 1000);
+		  }
+
 		</script>
 	</div>
 </body>

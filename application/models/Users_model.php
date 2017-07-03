@@ -16,18 +16,19 @@
 
         public function create_new_user($data)
         {
+            $data["password"] = md5($data["password"]);
             $this->db->insert('user', $data);
         }
 
         public function auth($username, $password)
         {
-            //checks if there is a match username, password in db
+                //checks if there is a match username, password in db
             $match = count($this->db->select('username')
                   ->where('username', $username)
-                  ->where('password', $password)
+                  ->where('password', md5($password))
                   ->get('user')->result_array());
 
-            //if no match, return false (auth failed)
+            //if there is a match
             if($match > 0)
             {
                 //check if user is admin
@@ -35,9 +36,10 @@
                 $this->db->select('is_admin')
                      ->where('username', $username)
                      ->get('user')
-                     ->result_array()
-                        ["is_admin"];
+                     ->result_array();
 
+                print_r($admin_state);
+                die();
 
                 $this->is_admin = $admin_state;
                 return true;
