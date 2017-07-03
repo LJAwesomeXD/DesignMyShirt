@@ -11,7 +11,6 @@ session_start();
         }
 
 
-        //adds a new contest to the database through the Contests model
         public function create_new()
         {
             //stop user from accessing this page when not logged it
