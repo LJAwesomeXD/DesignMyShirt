@@ -23,6 +23,10 @@ session_start();
 
 			public function auth()
 			{
+				//if already logged, redirect to profile
+	            if(isset($_SESSION["username"])){
+	                header("location: ../users/profile");
+	            }
 				$this->layouter->render("pages/auth");
 			}
 

@@ -22,7 +22,10 @@
 
         public function auth($username, $password)
         {
-                //checks if there is a match username, password in db
+            
+
+
+            //checks if there is a match username, password in db
             $match = count($this->db->select('username')
                   ->where('username', $username)
                   ->where('password', md5($password))
@@ -39,7 +42,7 @@
                      ->result_array();
 
                 print_r($admin_state);
-                die();
+
 
                 $this->is_admin = $admin_state;
                 return true;
@@ -50,4 +53,6 @@
             }
             return false;
         }
+
+
     }

@@ -3,13 +3,13 @@
     class Layouter
     {
          public $inst;
-         public $header = 'templates/header';
+         public $header = 'sections/header';
          public $loaders = array();
-         public $footer = 'templates/footer';
+         public $footer = 'sections/footer';
 
          public function __construct()
          {
-             $this->inst = get_instance();;
+             $this->inst = get_instance();
          }
 
          public function add($view, $render = false)

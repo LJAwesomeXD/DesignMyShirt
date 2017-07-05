@@ -7,6 +7,8 @@ session_start();
             parent::__construct();
             $this->load->database();
             $this->load->model('users_model');
+            $this->load->library('layouter');
+            $this->load->library('upload');
         }
 
         public function home()
@@ -19,12 +21,14 @@ session_start();
 
             $this->layouter->render("user/profile");
         } */
-            
+
         public function signup()
         {
             $data = $_POST;
             print_r($data);
             $this->users_model->create_new_user($data);
+
+            
         }
 
         public function signin()
@@ -55,5 +59,10 @@ session_start();
         {
             unset($_SESSION["username"]);
             header("Location: ../pages/home");
+        }
+
+        public function profile()
+        {
+            $this->layouter->render("users/profile");
         }
     }
